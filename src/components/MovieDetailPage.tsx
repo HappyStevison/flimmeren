@@ -24,7 +24,6 @@ function MovieDetailPage() {
     useEffect(() => {
         if(!movieId) return;
         const controller = new AbortController();
-        const signal = controller.signal;
 
         (async () => {
             try {

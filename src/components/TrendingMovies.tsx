@@ -14,7 +14,6 @@ function TrendingMovies({ searchQuery }: TrendingMoviesProps) {
 
     useEffect(() => {
         const controller = new AbortController();
-        const signal = controller.signal;
         setIsLoading(true);
 
         const fetchFunction = searchQuery ? () => tmdbAPI.searchMovies(searchQuery) : tmdbAPI.getTrending;
