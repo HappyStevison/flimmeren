@@ -1,0 +1,16 @@
+// In tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  corePlugins: {
+    // This is sometimes needed to fix vite/v3 conflicts
+    preflight: false,
+  },
+  plugins: [],
+}
