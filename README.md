@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Movie Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic and responsive movie discovery dashboard built with React and TypeScript, allowing users to browse trending movies and search for their favorites.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[**View the live application here**](https://flimmeren-11oj289qs-alexander-kopkes-projects.vercel.app/)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Browse Trending Movies:** Displays a grid of the week's most popular movies from The Movie Database (TMDB).
+-   **Real-Time Search:** A fully functional, debounced search bar to find any movie in the TMDB catalog.
+-   **Movie Detail Pages:** Click any movie to view a dedicated page with detailed information, including overview, rating, genres, and high-resolution images.
+-   **Responsive Design:** A clean, modern UI built with Tailwind CSS that looks great on desktop and mobile devices.
+-   **Type-Safe:** Built with TypeScript for improved reliability, scalability, and developer experience.
+-   **Client-Side Routing:** Seamless navigation between the dashboard and detail pages using React Router.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Frontend:** React, TypeScript, Vite
+-   **Routing:** React Router v6
+-   **Styling:** Tailwind CSS
+-   **API:** The Movie Database (TMDB) API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 How to Run Locally
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/movie-dashboard.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd movie-dashboard
+    ```
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+4.  Create a `.env` file in the root directory and add your TMDB API key:
+    ```
+    VITE_API_KEY=your_api_key_here
+    ```
+5.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+6.  Open your browser to `http://localhost:5173`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🤔 Reflection
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project was a fantastic opportunity to deepen my understanding of modern React development. I focused on creating a polished user experience with features like debounced search and smooth navigation. It also allowed me to practice working with third-party APIs and managing application state effectively in a type-safe environment.
