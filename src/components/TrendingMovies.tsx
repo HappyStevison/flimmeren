@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { tmdbAPI } from "../services/tmdb-api";
 import type { Movie } from "../types/movie";
+import { useWatchlist } from "../hooks/useWatchlist";
+
 
 interface TrendingMoviesProps {
     searchQuery?: string | null;
@@ -11,6 +13,8 @@ function TrendingMovies({ searchQuery }: TrendingMoviesProps) {
     const [movies, setMovies] = useState<Movie[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const { addMovie, isInWatchlist } = useWatchlist();
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -48,6 +52,14 @@ function TrendingMovies({ searchQuery }: TrendingMoviesProps) {
                             alt={movie.title}
                             className="w-full h-50 object-cover"
                         />
+                        <button
+                            onClick={() => addMovie(movie)}
+                            disabled={isInWatchlist(movie.id)}
+                            className="absolute top-2 right-2 bg-white/80 text-black px-2 py-1 rounded-full hover:bg-white disabled:opacity-50"
+                            aria-label="Add to watchlist"
+                            >
+                            ➕
+                        </button>
                         <div className="p-2">
                             <h3 className="text-sm font-semibold text-white truncate">{movie.title}</h3>
                             <p className="text-xs text-gray-400">{movie.release_date}</p>
