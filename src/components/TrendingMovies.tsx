@@ -79,7 +79,7 @@ function TrendingMovies({ searchQuery }: TrendingMoviesProps) {
                             className="bg-white/80 text-black px-2 py-1 rounded-full hover:bg-white disabled:opacity-50"
                             aria-label="Add to watchlist"
                             >
-                            ➕
+                            {isInWatchlist(movie.id) ? '✓' : '➕'}
                             </button>
                         }
                         />
